@@ -1,1 +1,30 @@
-<h1>Hello! </h1>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Website Accessibility Test</h2>
+
+<button onclick="testWebsite()">Test Website</button>
+
+<p id="result"></p>
+
+<script>
+function testWebsite() {
+  var url = 'http://MaragAT01.github.io/chattest/index.html';
+  
+  fetch(url)
+  .then(response => {
+    if(response.ok) {
+      document.getElementById("result").innerHTML = "Website is accessible.";
+    } else {
+      document.getElementById("result").innerHTML = "Website is not accessible.";
+    }
+  })
+  .catch(error => {
+    document.getElementById("result").innerHTML = "Error: " + error;
+  });
+}
+</script>
+
+</body>
+</html>
